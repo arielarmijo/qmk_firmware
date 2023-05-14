@@ -22,9 +22,9 @@ enum planck_layers {
   _COLEMAK,
   _DVORAK,
   _PLOVER,
+  _NUMBERS,
   _LOWER,
   _RAISE,
-  _NUMBERS,
   _ADJUST,
   _FUNCTION
 };
@@ -128,6 +128,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     EXT_PLV, KC_NO, KC_NO, KC_C,  KC_V,  KC_NO, KC_NO, KC_N,  KC_M,  KC_NO, KC_NO,   KC_NO
   ),
 
+    /* Numbers */
+  [_NUMBERS] = LAYOUT_planck_grid(
+    QWERTY,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_P7, KC_P8,   KC_P9,   KC_0,    KC_BSPC,
+    LOWER,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_P4, KC_P5,   KC_P6,   KC_PAST, KC_PSLS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_P1, KC_P2,   KC_P3,   KC_PMNS, KC_PENT,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PPLS, KC_PPLS, KC_P0, KC_PCMM, KC_PDOT, KC_PEQL, KC_NUM
+  ),
+
   /* Lower */
   [_LOWER] = LAYOUT_planck_grid(
     KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,       KC_7,    KC_8,       KC_9,     KC_0,    KC_DEL,
@@ -142,14 +150,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_TRNS, KC_TRNS,  KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
     KC_LSFT, KC_MPRV, KC_VOLD, KC_MPLY, KC_VOLU, KC_MNXT, KC_TRNS,  KC_MUTE, KC_NUBS, KC_TRNS, KC_TRNS, KC_RSFT,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY
-  ),
-
-  /* Numbers */
-  [_NUMBERS] = LAYOUT_planck_grid(
-    QWERTY,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_P7, KC_P8,   KC_P9,   KC_0,    KC_BSPC,
-    KC_DEL,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_P4, KC_P5,   KC_P6,   KC_PAST, KC_PSLS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_P1, KC_P2,   KC_P3,   KC_PMNS, KC_PENT,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PPLS, KC_PPLS, KC_P0, KC_PDOT, KC_TRNS, KC_TRNS, KC_NUM
   ),
 
   /* Adjust (Lower + Raise) */
