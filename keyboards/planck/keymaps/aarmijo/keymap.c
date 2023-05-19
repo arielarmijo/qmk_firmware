@@ -45,10 +45,6 @@ enum planck_keycodes {
 	BD
 };
 
-enum tap_dances {
-	TD_UP_APP,
-};
-
 #define LOWER    MO(_LOWER)
 #define RAISE    MO(_RAISE)
 #define NUMBER   TG(_NUMBER)
@@ -254,7 +250,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 			break;
 		case PHONE:
 		if (record->event.pressed) {
-			SEND_STRING("949331219");
+			SEND_STRING("949931219");
 		}
 		break;
 		case CC:
@@ -382,7 +378,3 @@ bool music_mask_user(uint16_t keycode) {
 			return true;
 	}
 }
-
-tap_dance_action_t tap_dance_actions[] = {
-	[TD_UP_APP] = ACTION_TAP_DANCE_DOUBLE(KC_UP, KC_APP),
-};

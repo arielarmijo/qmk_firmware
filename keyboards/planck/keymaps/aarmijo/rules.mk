@@ -1,3 +1,3 @@
 SRC += muse.c
-TAP_DANCE_ENABLE = yes
+TAP_DANCE_ENABLE = no
 MOUSEKEY_ENABLE = no
