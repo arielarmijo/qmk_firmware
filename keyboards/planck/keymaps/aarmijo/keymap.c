@@ -42,7 +42,7 @@ enum planck_keycodes {
 	CC,
 	USR,
 	PWD,
-	BD
+	GMT
 };
 
 #define LOWER    MO(_LOWER)
@@ -50,7 +50,7 @@ enum planck_keycodes {
 #define FUNCTION MO(_FUNCTION)
 #define LOW_TAB  LT(LOWER, KC_TAB)
 #define LS_CAPS  LSFT_T(KC_CAPS)
-#define RS_END  RSFT_T(KC_END)
+#define RS_END   RSFT_T(KC_END)
 #define RA_LEFT  RALT_T(KC_LEFT)
 #define RALT_N	 RALT(KC_N)
 #define RC_RGHT  RCTL_T(KC_RGHT)
@@ -106,10 +106,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		* `-----------------------------------------------------------------------------------'
 	*/
 	[_DVORAK] = LAYOUT_planck_grid(
-		KC_TAB,  KC_QUOT,  KC_COMM, KC_DOT,  KC_P,  KC_Y,   KC_F,   KC_G,  KC_C,    KC_R,    KC_L,  KC_BSPC,
-		KC_ESC,  KC_A,     KC_O,    KC_E,    KC_U,  KC_I,   KC_D,   KC_H,  KC_T,    KC_N,    KC_S,  KC_SLSH,
-		KC_LSFT, KC_SCLN,  KC_Q,    KC_J,    KC_K,  KC_X,   KC_B,   KC_M,  KC_W,    KC_V,    KC_Z,  KC_ENT ,
-		KC_LCTL, FUNCTION, KC_LALT, KC_LGUI, LOWER, KC_SPC, KC_SPC, RAISE, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT
+		KC_TAB,  KC_QUOT,  KC_COMM, KC_DOT,  KC_P,  KC_Y,   KC_F,   KC_G,  KC_C,    KC_R,    KC_L,    KC_BSPC,
+		KC_ESC,  KC_A,     KC_O,    KC_E,    KC_U,  KC_I,   KC_D,   KC_H,  KC_T,    KC_N,    KC_S,    KC_SLSH,
+		KC_LSFT, KC_SCLN,  KC_Q,    KC_J,    KC_K,  KC_X,   KC_B,   KC_M,  KC_W,    KC_V,    KC_Z,    KC_ENT ,
+		KC_LCTL, FUNCTION, KC_LALT, KC_LGUI, LOWER, KC_SPC, KC_SPC, RAISE, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 	),
 
 	/* Plover layer (http://opensteno.org)
@@ -124,10 +124,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		* `-----------------------------------------------------------------------------------'
 	*/
 	[_PLOVER] = LAYOUT_planck_grid(
-		KC_1,    KC_1,  KC_1,  KC_1,  KC_1,  KC_1,  KC_1,  KC_1,  KC_1,  KC_1,  KC_1,    KC_1,
-		KC_NO,   KC_Q,  KC_W,  KC_E,  KC_R,  KC_T,  KC_Y,  KC_U,  KC_I,  KC_O,  KC_P,    KC_LBRC,
-		KC_NO,   KC_A,  KC_S,  KC_D,  KC_F,  KC_G,  KC_H,  KC_J,  KC_K,  KC_L,  KC_SCLN, KC_QUOT,
-		EXT_PLV, KC_NO, KC_NO, KC_C,  KC_V,  KC_NO, KC_NO, KC_N,  KC_M,  KC_NO, KC_NO,   KC_NO
+		KC_1,    KC_1,     KC_1,    KC_1,    KC_1,  KC_1,   KC_1,   KC_1,  KC_1,    KC_1,    KC_1,    KC_1,
+		KC_NO,   KC_Q,     KC_W,    KC_E,    KC_R,  KC_T,   KC_Y,   KC_U,  KC_I,    KC_O,    KC_P,    KC_LBRC,
+		KC_NO,   KC_A,     KC_S,    KC_D,    KC_F,  KC_G,   KC_H,   KC_J,  KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+		EXT_PLV, KC_NO,    KC_NO,   KC_C,    KC_V,  KC_NO,  KC_NO,  KC_N,  KC_M,    KC_NO,   KC_NO,   KC_NO
 	),
 
 		/* Numbers */
@@ -156,16 +156,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	/* Adjust (Lower + Raise) */
 	[_ADJUST] = LAYOUT_planck_grid(
-		KC_TRNS, QK_BOOT, DB_TOGG, RGB_TOG, RGB_HUD, RGB_HUI, RGB_SAI, RGB_SAD, RGB_VAD, RGB_VAI, RGB_MOD, RGB_RMOD,
-		KC_TRNS, AU_TOGG, MU_TOGG, CK_TOGG, CK_RST,  AG_TOGG, KC_TRNS, QWERTY,  COLEMAK, DVORAK,  PLOVER,  KC_TRNS,
-		KC_TRNS, AU_NEXT, MU_NEXT, CK_UP,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-		KC_PWR,  AU_PREV, KC_TRNS, CK_DOWN, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, EE_CLR
+		QK_BOOT, RGB_TOG, RGB_M_P, RGB_M_B, RGB_MOD, RGB_RMOD, RGB_HUD, RGB_HUI, RGB_SAD, RGB_SAI, RGB_VAD, RGB_VAI,
+		AU_PREV, AU_TOGG, AU_NEXT, CK_DOWN, CK_TOGG, CK_UP,    KC_TRNS, QWERTY,  COLEMAK, DVORAK,  PLOVER,  KC_TRNS,
+		KC_TRNS, MU_TOGG, MU_NEXT, KC_TRNS, CK_RST,  KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+		KC_PWR,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, EE_CLR
 	),
 
 	/* Function */
 	[_FUNCTION] = LAYOUT_planck_grid(
 		KC_TRNS, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
-		KC_TRNS, RUT,     EMAIL,   PHONE,   CC,      BD,      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_F12,
+		KC_TRNS, RUT,     EMAIL,   PHONE,   CC,      GMT,     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_F12,
 		KC_TRNS, USR,     PWD,     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PSCR,
 		KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_BRID, KC_BRIU, KC_TRNS
 	)
@@ -257,7 +257,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 				SEND_STRING("4345591123200648");
 			}
 			break;
-		case BD:
+		case GMT:
 			if (record->event.pressed) {
 				SEND_STRING("Good morning team!");
 			}
